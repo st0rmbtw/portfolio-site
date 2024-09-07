@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт-Портфолио</title>
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+    <div id="container">
+        <header id="left">
+            <div id="left_container">
+                <span id="title">Портфолио</span>
+                <div id="navigation column">    
+                    <div class="navigation__item row selected">
+                        <div class="navigation__item_line"></div>
+                        <a class="reset-a" href="#about-me">О себе</a>
+                    </div>
+                    <div class="navigation__item row">
+                        <div class="navigation__item_line"></div>
+                        <a class="reset-a" href="#projects">Проекты</a>
+                    </div>
+                </div>
+                <div class="row gap-8">
+                    <div class="social_card">
+                        <a href="{{ contacts.github }}" target="_blank" rel="noopener noreferrer">
+                            <svg class="social_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                        </a>
+                    </div>
+
+                    <div class="social_card">
+                        <a href="{{ contacts.tg }}" target="_blank" rel="noopener noreferrer">
+                            <svg class="social_icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                            <defs><linearGradient x1="9.858" y1="9.858" x2="38.142" y2="38.142" gradientUnits="userSpaceOnUse" id="color-1_oWiuH0jFiU0R_gr1"><stop offset="0" stop-color="#33bef0"></stop><stop offset="1" stop-color="#0a85d9"></stop></linearGradient></defs><g transform="translate(-25.6,-25.6) scale(1.2,1.2)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M44,24c0,11.045 -8.955,20 -20,20c-11.045,0 -20,-8.955 -20,-20c0,-11.045 8.955,-20 20,-20c11.045,0 20,8.955 20,20z" fill="url(#color-1_oWiuH0jFiU0R_gr1)"></path><path d="M10.119,23.466c8.155,-3.695 17.733,-7.704 19.208,-8.284c3.252,-1.279 4.67,0.028 4.448,2.113c-0.273,2.555 -1.567,9.99 -2.363,15.317c-0.466,3.117 -2.154,4.072 -4.059,2.863c-1.445,-0.917 -6.413,-4.17 -7.72,-5.282c-0.891,-0.758 -1.512,-1.608 -0.88,-2.474c0.185,-0.253 0.658,-0.763 0.921,-1.017c1.319,-1.278 1.141,-1.553 -0.454,-0.412c-0.19,0.136 -1.292,0.935 -1.745,1.237c-1.11,0.74 -2.131,0.78 -3.862,0.192c-1.416,-0.481 -2.776,-0.852 -3.634,-1.223c-1.185,-0.513 -1.639,-2.224 0.14,-3.03z" fill="#000000" opacity="0.05"></path><path d="M10.836,23.591c7.572,-3.385 16.884,-7.264 18.246,-7.813c3.264,-1.318 4.465,-0.536 4.114,2.011c-0.326,2.358 -1.483,9.654 -2.294,14.545c-0.478,2.879 -1.874,3.513 -3.692,2.337c-1.139,-0.734 -5.723,-3.754 -6.835,-4.633c-0.86,-0.679 -1.751,-1.463 -0.71,-2.598c0.348,-0.379 2.27,-2.234 3.707,-3.614c0.833,-0.801 0.536,-1.196 -0.469,-0.508c-1.843,1.263 -4.858,3.262 -5.396,3.625c-1.025,0.69 -1.988,0.856 -3.664,0.329c-1.321,-0.416 -2.597,-0.819 -3.262,-1.078c-1.486,-0.576 -1.506,-1.816 0.255,-2.603z" fill="#000000" opacity="0.07"></path><path d="M11.553,23.717c6.99,-3.075 16.035,-6.824 17.284,-7.343c3.275,-1.358 4.28,-1.098 3.779,1.91c-0.36,2.162 -1.398,9.319 -2.226,13.774c-0.491,2.642 -1.593,2.955 -3.325,1.812c-0.833,-0.55 -5.038,-3.331 -5.951,-3.984c-0.833,-0.595 -1.982,-1.311 -0.541,-2.721c0.513,-0.502 3.874,-3.712 6.493,-6.21c0.343,-0.328 -0.088,-0.867 -0.484,-0.604c-3.53,2.341 -8.424,5.59 -9.047,6.013c-0.941,0.639 -1.845,0.932 -3.467,0.466c-1.226,-0.352 -2.423,-0.772 -2.889,-0.932c-1.795,-0.616 -1.369,-1.414 0.374,-2.181z" fill="#ffffff"></path></g></g></g>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="social_card">
+                        <a href="{{ contacts.vk }}" target="_blank" rel="noopener noreferrer">
+                            <svg class="social_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256">
+                            <g transform="translate(-25.6,-25.6) scale(1.2,1.2)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M24,4c-11,0 -20,9 -20,20c0,11 9,20 20,20c11,0 20,-9 20,-20c0,-11 -9,-20 -20,-20z" fill="#1976d2"></path><path d="M25.2,33.2c-9,0 -14.1,-6.1 -14.3,-16.4h4.5c0.1,7.5 3.5,10.7 6.1,11.3v-11.3h4.2v6.5c2.6,-0.3 5.3,-3.2 6.2,-6.5h4.2c-0.7,4 -3.7,7 -5.8,8.2c2.1,1 5.5,3.6 6.7,8.2h-4.7c-1,-3.1 -3.5,-5.5 -6.8,-5.9v5.9z" fill="#ffffff"></path></g></g></g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="right">
+            <section class="info-block card column" id="about-me">
+                <span id="author__name">{{ about_me.name }}</span>
+                <br>
+                <div id="author__description", class="row items-center gap-5">{{ about_me.description|safe }}</div>
+            </section>
+
+            <section class="info-block column" id="projects">
+                {% for project in projects %}
+                    <div class="project__item card column gap-26">
+                        {{ project.description }}
+
+                        {% if project.url is not none %}
+                            <div class="row">
+                                <a class="reset-a" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">Перейти</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow" aria-hidden="true" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <span id="no-projects-yet">Проектов пока нет</span>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+
+    <script src="static/js/index.js"></script>
+</body>
+</html>
