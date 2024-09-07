@@ -31,7 +31,11 @@ DEBUG = bool(int(dotenv_values.get("DEBUG", "0")))
 HOST = dotenv_values.get("HOST", "127.0.0.1")
 PORT = int(dotenv_values.get("PORT", 7777))
 
-app = Flask("Portfolio Website", template_folder=root_dir.joinpath("templates"))
+app = Flask(
+    "Portfolio Website",
+    template_folder=root_dir.joinpath("templates"),
+    static_folder=root_dir.joinpath("static")
+)
 
 @app.route('/')
 def index():
