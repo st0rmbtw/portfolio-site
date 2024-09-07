@@ -1,7 +1,6 @@
 __pycache__/
 env/
 
-static/css/
 info.json
 run.bat
 .env
