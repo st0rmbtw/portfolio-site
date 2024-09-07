@@ -46,5 +46,9 @@ def index():
     
     return render_template("index.html", **context)
 
+@app.errorhandler(404)
+def error404(error):
+    return render_template("404.html")
+
 if __name__ == "__main__":
     app.run(host=HOST, port=PORT, debug=DEBUG)

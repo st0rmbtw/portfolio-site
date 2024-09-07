@@ -1,0 +1,33 @@
+@import "fonts.scss";
+@import "reset.scss";
+@import "utils.scss";
+
+html {
+    background-image: url("/static/svg/background.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #0b4214;
+    background-attachment: fixed;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    position: relative;
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: white;
+}
+
+#error-404 {
+    font-size: 14rem;
+    font-weight: 100;
+    color: lightgreen;
+}
+
+#info {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #43a44b;
+}
