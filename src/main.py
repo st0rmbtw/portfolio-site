@@ -1,5 +1,8 @@
 from flask import Flask, render_template
+from pathlib import Path
 import json
+
+root_dir = Path(__file__).parent.parent
 
 def emojify(text: str) -> str:
     new_text = text
@@ -18,7 +21,7 @@ def emojify(text: str) -> str:
 
 dotenv_values = {}
 
-with open(".env", "r") as f:
+with open(root_dir.joinpath('.env'), "r") as f:
     for line in f.readlines():
         values = line.rstrip().split('=')
         if len(values) == 2:
@@ -28,11 +31,11 @@ DEBUG = bool(int(dotenv_values.get("DEBUG", "0")))
 HOST = dotenv_values.get("HOST", "127.0.0.1")
 PORT = int(dotenv_values.get("PORT", 7777))
 
-app = Flask("Portfolio Website", template_folder="./templates")
+app = Flask("Portfolio Website", template_folder=root_dir.joinpath("templates"))
 
 @app.route('/')
 def index():
-    with open("info.json", "r", encoding="utf-8") as f:
+    with open(root_dir.joinpath("info.json"), "r", encoding="utf-8") as f:
         context = json.loads(f.read())
         if context['about_me']['description']:
             context['about_me']['description'] = emojify(context['about_me']['description'])
