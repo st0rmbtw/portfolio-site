@@ -76,22 +76,24 @@
             {% for subject in subjects %}
                 <section class="info-block column" id="{{ subject.id }}">
                     <span class="info-block__title self-center">{{ subject.name }}</span>
-                    {% for project in subject.projects %}
-                        <div class="project__item card column gap-26">
-                            {{ project.description }}
+                    <div class="column projects">
+                        {% for project in subject.projects %}
+                            <div class="project__item card column gap-26">
+                                {{ project.description }}
 
-                            {% if project.url is not none %}
-                                <div class="row link_container">
-                                    <a class="reset-a" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">Перейти</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow" aria-hidden="true" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
-                                </div>
-                            {% endif %}
-                        </div>
-                    {% else %}
-                        <div class="column w-full items-center gap-12">
-                            <span id="no-projects-yet">Проектов пока нет</span>
-                        </div>
-                    {% endfor %}
+                                {% if project.url is not none %}
+                                    <div class="row link_container">
+                                        <a class="reset-a" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">Перейти</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow" aria-hidden="true" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <div class="column w-full items-center gap-12">
+                                <span id="no-projects-yet">Проектов пока нет</span>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </section>
             {% endfor %}
         </main>

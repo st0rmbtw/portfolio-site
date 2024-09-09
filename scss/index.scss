@@ -127,7 +127,7 @@ body {
     width: 100%;
 }
 
-#projects {
+.projects {
     gap: 20px;
 }
 
@@ -153,6 +153,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .link_container a:hover + .arrow {
@@ -209,6 +210,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .social_icon {
@@ -255,9 +257,8 @@ body {
     }
 
     #container {
-        gap: 40px;
-        padding-left: 6rem;
-        padding-right: 6rem;
+        padding-left: 8rem;
+        padding-right: 2rem;
     }
 }
 
@@ -267,9 +268,13 @@ body {
     }
 
     #container {
-        gap: 20px;
+        // gap: 140px;
         padding-left: 8rem;
-        padding-right: 8rem;
+        padding-right: 2rem;
+    }
+    
+    #right {
+        max-width: 540px;
     }
 
     #author__name {
@@ -281,6 +286,10 @@ body {
     }
 
     .navigation__item {
+        font-size: 1.25rem;
+    }
+
+    .navigation__subtitle {
         font-size: 1.25rem;
     }
 
@@ -317,9 +326,12 @@ body {
     }
 
     #container {
-        gap: 75px;
         padding-left: 4rem;
-        padding-right: 4rem;
+        padding-right: 2rem;
+    }
+
+    #right {
+        max-width: 400px;
     }
 
     #author__name {
@@ -331,7 +343,11 @@ body {
     }
 
     .navigation__item {
-        font-size: 1.25rem;
+        font-size: 1rem;
+    }
+
+    .navigation__subtitle {
+        font-size: 1rem;
     }
 
     .project__item {
