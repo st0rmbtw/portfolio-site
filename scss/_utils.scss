@@ -1,3 +1,7 @@
+.flex {
+    display: flex;
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -22,6 +26,14 @@
 
 .self-center {
     align-self: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
 }
 
 .gap-1 {

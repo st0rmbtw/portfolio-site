@@ -3,4 +3,5 @@ env/
 
 info.json
 run.bat
+run.sh
 .env

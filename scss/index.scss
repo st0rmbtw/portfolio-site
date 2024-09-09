@@ -37,11 +37,14 @@ body {
     color: white;
 }
 
-#title {
+#site_info__title {
     font-size: 4em;
-    align-self: center;
     font-weight: 700;
     color: #06c657;
+}
+
+#site_info__description {
+    color: #c2e588   
 }
 
 #container {
@@ -78,9 +81,6 @@ body {
 }
 
 .navigation__item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: 10px;
 
     margin-top: 1em;
@@ -98,6 +98,12 @@ body {
 
 .navigation__item.selected > .navigation__item_line {
     width: 80px;
+}
+
+.navigation__subtitle {
+    font-size: 1.2rem;
+    // color: #FFFBCE;
+    color: #fff;
 }
 
 .navigation__item_line {
@@ -134,7 +140,7 @@ body {
 }
 
 .project__item {
-    font-size: 1.25em;
+    font-size: 1.25rem;
 }
 
 .card {
@@ -149,16 +155,17 @@ body {
     backdrop-filter: blur(5px);
 }
 
-.project__item a:hover + .arrow {
-    transform: translateX(2.5px) translateY(-2.5px);
+.link_container a:hover + .arrow {
+    transform: translateX(3px) translateY(-3px);
 }
 
-.project__item a:hover {
+.link_container a:hover {
     text-decoration: underline;
 }
 
-.project__item a {
+.link_container a {
     color: #c2e588;
+    font-size: 1rem;
 }
 
 .arrow {
@@ -166,7 +173,7 @@ body {
     height: 20px;
     transition: transform .15s cubic-bezier(.4, 0, .2, 1);
     color: #c2e588;
-    transform: translateX(-2.5px) translateY(2.5px);
+    // transform: translateX(-1px) translateY(1px);
 }
 
 #author__name {
@@ -217,8 +224,15 @@ body {
 
 #no-projects-yet {
     color: #aaa;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
+}
+
+.info-block__title {
+    font-weight: 500;
+    font-size: 1.75rem;
+    color: #eee;
+    padding-bottom: 24px;
 }
 
 @media only screen and (max-width: 1594px) {
@@ -235,7 +249,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 1420px) {
+@media only screen and (max-width: 1440px) {
     #author__name {
         font-size: 2.5rem;
     }
@@ -248,7 +262,7 @@ body {
 }
 
 @media only screen and (max-width: 1330px) {
-    #title {
+    #site_info__title {
         font-size: 3em;
     }
 
@@ -270,7 +284,19 @@ body {
         font-size: 1.25rem;
     }
 
+    .link_container a {
+        font-size: 0.9rem;
+    }
+
     .project__item {
+        font-size: 1rem;
+    }
+
+    .info-block__title {
+        font-size: 1.25rem;
+    }
+
+    #no-projects-yet {
         font-size: 1rem;
     }
 
@@ -286,7 +312,7 @@ body {
 }
 
 @media only screen and (max-width: 1050px) {
-    #title {
+    #site_info__title {
         font-size: 2em;
     }
 
@@ -301,7 +327,7 @@ body {
     }
 
     #author__description {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
 
     .navigation__item {
@@ -309,6 +335,10 @@ body {
     }
 
     .project__item {
+        font-size: 0.85rem;
+    }
+
+    .link_container a {
         font-size: 0.75rem;
     }
 

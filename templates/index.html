@@ -10,16 +10,25 @@
     <div id="container">
         <header id="left">
             <div id="left_container">
-                <span id="title">Портфолио</span>
+                <div id="site_info" class="column gap-12">
+                    <span id="site_info__title">{{ main_title }}</span>
+                    <span id="site_info__description">{{ main_description }}</span>
+                </div>
+
                 <div id="navigation column">    
-                    <div class="navigation__item row selected">
+                    <div class="navigation__item row items-center selected">
                         <div class="navigation__item_line"></div>
                         <a class="reset-a" href="#about-me">О себе</a>
                     </div>
-                    <div class="navigation__item row">
-                        <div class="navigation__item_line"></div>
-                        <a class="reset-a" href="#projects">Проекты</a>
+                    <div class="flex w-full">
+                        <div class="navigation__subtitle">Дисциплины</div>
                     </div>
+                    {% for subject in subjects %}
+                        <div class="navigation__item row items-center">
+                            <div class="navigation__item_line"></div>
+                            <a class="reset-a" href="#{{ subject.id }}">{{ subject.name }}</a>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="row gap-8">
                     <div class="social_card">
@@ -46,29 +55,45 @@
                 </div>
             </div>
         </header>
-        <main id="right">
+        <main id="right" class="column">
             <section class="info-block card column" id="about-me">
                 <span id="author__name">{{ about_me.name }}</span>
                 <br>
-                <div id="author__description", class="row items-center gap-5">{{ about_me.description|safe }}</div>
-            </section>
-
-            <section class="info-block column" id="projects">
-                {% for project in projects %}
-                    <div class="project__item card column gap-26">
-                        {{ project.description }}
-
-                        {% if project.url is not none %}
-                            <div class="row">
-                                <a class="reset-a" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">Перейти</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow" aria-hidden="true" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% else %}
-                    <span id="no-projects-yet">Проектов пока нет</span>
+                {% for line in about_me.description %}
+                    <div id="author__description", class="row items-center gap-5">{{ line|safe }}</div>
+                    {% if loop.index != about_me.description|length %}
+                        <br>
+                    {% endif %}
                 {% endfor %}
+                <br>
+                <br>
+                <div class="row link_container">
+                    <a class="reset-a link" href="https://disk.yandex.ru/i/r_daajba3Hjtmg" target="_blank" rel="noopener noreferrer">Кто я?</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow" aria-hidden="true" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                </div>
             </section>
+
+            {% for subject in subjects %}
+                <section class="info-block column" id="{{ subject.id }}">
+                    <span class="info-block__title self-center">{{ subject.name }}</span>
+                    {% for project in subject.projects %}
+                        <div class="project__item card column gap-26">
+                            {{ project.description }}
+
+                            {% if project.url is not none %}
+                                <div class="row link_container">
+                                    <a class="reset-a" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">Перейти</a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow" aria-hidden="true" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <div class="column w-full items-center gap-12">
+                            <span id="no-projects-yet">Проектов пока нет</span>
+                        </div>
+                    {% endfor %}
+                </section>
+            {% endfor %}
         </main>
     </div>
 

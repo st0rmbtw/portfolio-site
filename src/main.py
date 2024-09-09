@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from pathlib import Path
 import json
 
@@ -21,15 +21,20 @@ def emojify(text: str) -> str:
 
 dotenv_values = {}
 
-with open(root_dir.joinpath('.env'), "r") as f:
-    for line in f.readlines():
-        values = line.rstrip().split('=')
-        if len(values) == 2:
-            dotenv_values[values[0]] = values[1]
-            
-DEBUG = bool(int(dotenv_values.get("DEBUG", "0")))
+dotenv_file = root_dir.joinpath('.env')
+
+if dotenv_file.is_file():
+    with open(dotenv_file, "r") as f:
+        for line in f.readlines():
+            values = line.rstrip().split('=')
+            if len(values) == 2:
+                dotenv_values[values[0]] = values[1]
+
+DEBUG = bool(int(dotenv_values.get("DEBUG", "1")))
 HOST = dotenv_values.get("HOST", "127.0.0.1")
 PORT = int(dotenv_values.get("PORT", 7777))
+
+info_json_file = root_dir.joinpath("info.json")
 
 app = Flask(
     "Portfolio Website",
@@ -39,10 +44,11 @@ app = Flask(
 
 @app.route('/')
 def index():
-    with open(root_dir.joinpath("info.json"), "r", encoding="utf-8") as f:
+    with open(info_json_file, "r", encoding="utf-8") as f:
         context = json.loads(f.read())
         if context['about_me']['description']:
-            context['about_me']['description'] = emojify(context['about_me']['description'])
+            for i, line in enumerate(context['about_me']['description']):
+                context['about_me']['description'][i] = emojify(line)
     
     return render_template("index.html", **context)
 
